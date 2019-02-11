@@ -1,8 +1,8 @@
 # 头部菜单，title: link
 menu:
-  Whoami: /whoami
-  Github: https://github.com/Fechin
-  Twitter: https://twitter.com/FechinLi
+  ABOUUTME: /aboutme
+  Github: https://github.com/xxlh
+  # Twitter: https://twitter.com/FechinLi
 
 # 是否显示目录
 TOC: false
@@ -44,13 +44,13 @@ gitalk:
     distractionFreeMode: false
 
 # 网站关键字
-keywords: Fechin
+keywords: xlh
 
 # 要使用google_analytics进行统计的话，这里需要配置ID
 google_analytics: 
 
 # 网站ico
-favicon: /img/favicon.png
+favicon: /img/little.png
 
 # rss文件
 rss: atom.xml
