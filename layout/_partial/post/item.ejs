@@ -1,11 +1,11 @@
 <div class="post <%- post.type!="preview"?"":"preview" %>">
-	<a href="<%- url_for(post.path) %>" title="<%- post.title || "Untitled" %>" class="<%- post.type !="preview"?"":"showewm" %>" >
+	<a href="<%- url_for(post.path) %>" title="<%- post.title || "Untitled" %>" class="<%- post.type !="preview"?"":"showmask" %>" >
 		<%- image_tag(post.cover || theme.cover, {class: "cover"}) %>
 		<% if(post.type=="preview"){ %>
 			<%- image_tag(post.preview,  {class: "qrcode"}) %>
 		<%	}	%>
     </a>
-    <div class="<%- post.type !="preview"?"":"showewm" %> else"</div>
+    <div class="<%- post.type !="preview"?"":"showmask" %> else"</div>
         <p><%- post.date.locale("zh-cn").format("MMMM DD, YYYY") %></p>
         <h3><%- link_to(post.path, post.title || "Untitled", {class: post.type!="preview"?"posttitle":"postpreview"}) %></h3>
         <p><%- truncate(strip_html(post.content), {length: 80, omission: '...'}) %></p>
