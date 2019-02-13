@@ -1,8 +1,14 @@
 <% var first = site.posts.sort("date", "desc").eq(0); %>
+<% var screenpage; %>
+<% site.pages.forEach(function(page){ %>
+	<%  if (page.source.indexOf(theme.menu.ABOUUTME) != -1) { %>
+		<% screenpage = page; %>
+	<% } %>
+<% }) %>
 <div id="screen">
     <div id="mark">
         <div class="layer" data-depth="0.4">
-            <%- image_tag(theme.welcome_cover || first.cover || "/img/welcome-cover.jpg", {id: "cover", crossorigin: "anonymous", width: 1920, height: 1080}) %>
+            <%- image_tag(theme.welcome_cover || (screenpage?screenpage.cover:first.cover) || "/img/welcome-cover.jpg", {id: "cover", crossorigin: "anonymous", width: 700, height: 525}) %>
         </div>
     </div>
     <div id="vibrant">
@@ -13,11 +19,16 @@
     </div>
     <div id="header">
         <div>
-            <!-- <a class="image-logo" href="/"></a>
-            <div class="icon-menu switchmenu"></div> -->
+            <a class="image-logo" href="/"></a>
+            <div class="icon-menu switchmenu"></div>
         </div>
     </div>
-    <% if ( first ) { %>
+    <% if ( screenpage ) { %>
+	<div id="post0">
+		<h2><%- link_to(screenpage.path, screenpage.title || config.title, {class: "posttitle"}) %></h2>
+		<p class="summary"><%- truncate(strip_html(screenpage.content), {length: 60, omission: '...'}) %></p>
+	</div>
+    <% } else if ( first ) { %>
     <div id="post0">
         <p><%- first.date.locale("zh-cn").format("MMMM DD, YYYY") %></p>
         <h2><%- link_to(first.path, first.title || config.title, {class: "posttitle"}) %></h2>

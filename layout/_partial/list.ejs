@@ -1,8 +1,16 @@
-<%
+<%	
+    var screenpage;
+	site.pages.forEach(function(page){
+		if(page.source.indexOf(theme.menu.ABOUUTME) != -1){
+			screenpage = page;
+		}
+	})
     page.posts.sort("date", "desc").each(function(post, i){
-    if (page.prev == 0 && i < start) {
-        return true;
-    }
+		if(!screenpage){
+			if (page.prev == 0 && i < start) {
+				return true;
+			}
+		}
 %>
 <%- partial('post/item', {post: post}) %>
 <% }) %>

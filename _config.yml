@@ -1,6 +1,7 @@
 # 头部菜单，title: link
 menu:
-  ABOUUTME: /aboutme
+  ABOUUTME: aboutme
+  # SCREEN: aboutme
   Github: https://github.com/xxlh
   # Twitter: https://twitter.com/FechinLi
 

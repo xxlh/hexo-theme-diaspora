@@ -489,6 +489,7 @@ $(function() {
                   owner: comment.data('o'),
                   admin: comment.data('a'),
                   id: decodeURI(window.location.pathname),
+                  title: comment.data('t'),
                   distractionFreeMode: comment.data('d')
                 })
                 $(".comment").removeClass("link")
@@ -529,6 +530,6 @@ $(function() {
     if (comment.data('ae') == true){
         comment.click();
     }
-    console.log("%c Gi thub %c","background:#24272A; color:#ffffff","","https://github.com/Fechin/hexo-theme-diaspora")
+    console.log("%c Github %c","background:#24272A; color:#ffffff","","https://github.com/xxlh")
 })
 
